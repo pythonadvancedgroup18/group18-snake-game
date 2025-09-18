@@ -1,0 +1,23 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtualenvs
+.venv/
+venv/
+ENV/
+# pipenv local venvs sometimes stored in .venv
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local runtime files
+high_score.json
+high_score.db
+
+# Logs
+*.log
