@@ -1,17 +1,21 @@
 ﻿# Snake — Group 18
 
 ## Quickstart (Windows / PowerShell)
-1. Install pipenv (if needed):
+REQUIRES PYTHON 3.13 OR GREATER 
+1. Clone the repo:
+   git clone https://github.com/pythonadvancedgroup18/group18-snake-game.git
+   cd group18-snake-game
+
+2. Install pipenv (if not already installed):
    py -m pip install --user pipenv
 
-2. Create environment & install deps:
-   py -m pipenv --python 3.13.5
-   py -m pipenv install
+3. Install dependencies from Pipfile.lock
+   py -m pipenv sync --dev
 
-3. Run:
+4. Run:
    py -m pipenv run python src/main.py
 
-4. Run tests:
+5. Run tests:
    py -m pipenv run pytest
 
 ## Notes
