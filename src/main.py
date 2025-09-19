@@ -121,40 +121,41 @@ class Food:
         self.position = self._random_position(snake_body)
 
 # --------------------
-# Single high score manager
+# High score manager (Top 5)
 # --------------------
 class HighScoreManager:
     def __init__(self, path=HIGH_SCORE_FILE):
         self.path = Path(path)
-        self.high_score = self._load()
+        self.high_scores = self._load()
 
     def _load(self):
         if not self.path.exists():
-            return 0
+            return []
         try:
             with open(self.path, "r", encoding="utf-8") as f:
                 data = json.load(f)
-            # accept dict or plain int
-            if isinstance(data, dict):
-                return int(data.get("high_score", 0))
-            return int(data)
+            if isinstance(data, dict) and "high_scores" in data:
+                return list(map(int, data.get("high_scores", [])))
+            return []
         except Exception:
-            return 0
+            return []
 
     def save(self):
         try:
             with open(self.path, "w", encoding="utf-8") as f:
-                json.dump({"high_score": int(self.high_score), "when": datetime.now().isoformat()}, f, indent=2)
+                json.dump({"high_scores": self.high_scores}, f, indent=2)
         except Exception as e:
-            print("Warning: could not save high score:", e)
+            print("Warning: could not save high scores:", e)
 
-    def update_if_beaten(self, score):
-        if int(score) > int(self.high_score):
-            self.high_score = int(score)
-            self.save()
+    def update(self, score):
+        self.high_scores.append(int(score))
+        # sort high → low, keep only top 5
+        self.high_scores = sorted(self.high_scores, reverse=True)[:5]
+        self.save()
 
-    def get(self):
-        return int(self.high_score)
+    def get_all(self):
+        return self.high_scores
+
 
 # --------------------
 # Game class
@@ -212,15 +213,17 @@ class Game:
             self.collision = WallCollision("Hit wall")
             self.running = False
             self.stop_timer()
-            self.highscore.update_if_beaten(self.score)
+            self.highscore.update(self.score)
+
             return
         if self.snake.will_collide_self(new_head):
             self.game_over = True
             self.collision = SelfCollision("Hit self")
             self.running = False
             self.stop_timer()
-            self.highscore.update_if_beaten(self.score)
+            self.highscore.update(self.score)
             return
+       
         self.snake.move_head(new_head)
         if new_head == self.food.position:
             self.score += 1
@@ -332,10 +335,13 @@ def main():
         # Sidebar content: buttons and high score (single)
         draw_buttons(screen, small_font, start_btn, pause_btn, game.running)
 
-        hs_title = mid_font.render("High Score", True, TEXT_COLOR)
+        hs_title = mid_font.render("High Scores", True, TEXT_COLOR)
         screen.blit(hs_title, (panel_x + 16, hs_y))
-        hs_val = small_font.render(str(game.highscore.get()), True, TEXT_COLOR)
-        screen.blit(hs_val, (panel_x + 20, hs_y + 36))
+
+        for idx, val in enumerate(game.highscore.get_all(), start=1):
+            hs_line = small_font.render(f"{idx}. {val}", True, TEXT_COLOR)
+            screen.blit(hs_line, (panel_x + 20, hs_y + 30 + idx * 20))
+
 
         # Game over overlay
         if game.game_over:
