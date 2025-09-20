@@ -1,4 +1,4 @@
-﻿# Snake — Group 18
+# Snake — Group 18
 
 ## Quickstart (Windows / PowerShell)
 1. Install pipenv (if needed):
