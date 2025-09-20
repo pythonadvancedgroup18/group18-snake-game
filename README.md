@@ -41,6 +41,11 @@ Snake initial length and starting position Snake movement logic Snake growth whe
 
 All tests are located inside the tests/ folder.
 
+## Demo Gif
+
+![Snake Game Demo](demo.gif)
+
+
 ## Notes
 - Game uses high_score.json locally. A sample data/high_score.example.json is included.
 - Python version used: 3.13.5
