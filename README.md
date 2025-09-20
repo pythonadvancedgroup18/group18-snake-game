@@ -1,5 +1,4 @@
-﻿# Snake — Group 18
-
+# Snake — Group 18
 ## Project Summary
 This project is our implementation of the classic Snake Game developed as part of the Advanced Python Cohort. The game features a clean dark-themed user interface, responsive controls, and dynamic gameplay where the snake grows longer as it eats food and gradually increases in speed. High scores are tracked locally and displayed on the game screen, with the top 5 scores recorded for replayability. 
 The codebase follows best practices with a clear project structure (src/, data/, tests/), dependency management handled through Pipenv (Pipfile + Pipfile.lock), and testing using Pytest.
