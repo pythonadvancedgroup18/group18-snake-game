@@ -1,5 +1,24 @@
 ﻿# Snake — Group 18
 
+## Project Summary
+This project is our implementation of the classic Snake Game developed as part of the Advanced Python Cohort. The game features a clean dark-themed user interface, responsive controls, and dynamic gameplay where the snake grows longer as it eats food and gradually increases in speed. High scores are tracked locally and displayed on the game screen, with the top 5 scores recorded for replayability. 
+The codebase follows best practices with a clear project structure (src/, data/, tests/), dependency management handled through Pipenv (Pipfile + Pipfile.lock), and testing using Pytest.
+
+## Assigned Roles
+*Coordinator/Lead:*
+Uche Ebubechukwu Uche Uduma - branch: uche_ebube_changes/main
+*Developers (Core Logic):*
+Success Oluwafemi Ali
+Oyedokun Yusuf - oyedokun_yusuf
+*QA/CI & Tests:* 
+Farid Abdurrahman 
+Ali Garba Muazu - Muazu_test
+*Docs/Presenters:* 
+Richmond Adoki
+Ike-Onuigbo Gideon Ikechi
+Muhammad Najibullah Abubakar
+Mohammed Mustapha Shehu
+
 ## Quickstart (Windows / PowerShell)
 1. Install pipenv (if needed):
    py -m pip install --user pipenv
