@@ -6,18 +6,24 @@ The codebase follows best practices with a clear project structure (src/, data/,
 
 ## Assigned Roles
 *Coordinator/Lead:*
-Uche Ebubechukwu Uche Uduma - branch: uche_ebube_changes/main
+1. Uche Ebubechukwu Uche Uduma - branch: uche_ebube_changes/main
+
 *Developers (Core Logic):*
-Success Oluwafemi Ali
-Oyedokun Yusuf - oyedokun_yusuf
+2. Success Oluwafemi Ali
+3. Oyedokun Yusuf - oyedokun_yusuf
+
 *QA/CI & Tests:* 
-Farid Abdurrahman 
-Ali Garba Muazu - Muazu_test
+4. Farid Abdurrahman 
+5. Ali Garba Muazu - Muazu_test
+
 *Docs/Presenters:* 
-Richmond Adoki
-Ike-Onuigbo Gideon Ikechi
-Muhammad Najibullah Abubakar
-Mohammed Mustapha Shehu
+6. Richmond Adoki
+7. Ike-Onuigbo Gideon Ikechi
+8. Muhammad Najibullah Abubakar
+9. Mohammed Mustapha Shehu
+
+## Demo Video
+link: https://drive.google.com/file/d/1JMHhyiCuv40jp_xRVoq-WvXqMO_SUkaZ/view?usp=drivesdk
 
 ## Quickstart (Windows / PowerShell)
 1. Install pipenv (if needed):
