@@ -358,5 +358,6 @@ def main():
         pygame.display.flip()
         clock.tick(60)  # render fps
 
-if __name__ == "__main__":
+if __name__ == "__main__": # Only run the game if this file is executed directly
+    
     main()
