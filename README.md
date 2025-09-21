@@ -25,12 +25,14 @@ The codebase follows best practices with a clear project structure (src/, data/,
 link: https://drive.google.com/file/d/1JMHhyiCuv40jp_xRVoq-WvXqMO_SUkaZ/view?usp=drivesdk
 
 ## Quickstart (Windows / PowerShell)
-1. Install pipenv (if needed):
+1. Clone the repo:
+   git clone https://github.com/pythonadvancedgroup18/group18-snake-game.git
+   cd group18-snake-game
+2. Install pipenv (if needed):
    py -m pip install --user pipenv
-2. Create environment & install deps:
-   py -m pipenv --python 3.13.5
-   py -m pipenv install
-3. Run:
+3. Create environment & install deps:
+   py -m pipenv sync --dev
+4. Run:
    py -m pipenv run python src/main.py
 
 ## Tests
